@@ -1,3 +1,4 @@
+import "dotenv/config"
 import { render } from "@react-email/components";
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
 import { Resend } from 'resend';
@@ -8,7 +9,7 @@ import { AlterCompanyEmailTemplate } from "./templates/AlterCompanyEmailTemplate
 
 const app = fastify()
 
-const resend = new Resend('re_3gwgp9Gb_Q172ZHq4we1npad9am7PDYez');
+const resend = new Resend(process.env.RESEND_KEY);
 
 app.get('/send-email/login', (request: FastifyRequest, replay: FastifyReply) => {
     const emailHtml = 
