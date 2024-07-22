@@ -16,13 +16,13 @@ app.get('/send-email/login', (request: FastifyRequest, replay: FastifyReply) => 
         render(LoginEmailTemplate({ 
             name: 'Melqui', 
             previewText: 'Aqui esta login, para acessar a plataforma', 
-            url: 'https://simplebot.vercel.app/login' 
+            url: 'https://Vunex.vercel.app/login' 
         }))
 
     resend.emails.send({
-        from: 'simplebot@resend.dev',
+        from: 'Vunex@resend.dev',
         to: 'melqui.sodre15@gmail.com',
-        subject: 'Bem vindo ao Simplebot',
+        subject: 'Bem vindo a Vunex',
         html: emailHtml
     })
 
@@ -34,11 +34,11 @@ app.get('/send-email/forgot-password', (request: FastifyRequest, replay: Fastify
         render(CreateNewPasswordEmailTemplate({ 
             name: 'Melqui', 
             previewText: 'Aqui o link para criar sua nova senha', 
-            url: 'https://simplebot.vercel.app/register-new-password' 
+            url: 'https://Vunex.vercel.app/register-new-password' 
         }))
 
     resend.emails.send({
-        from: 'simplebot@resend.dev',
+        from: 'Vunex@resend.dev',
         to: 'melqui.sodre15@gmail.com',
         subject: 'Crie sua nova senha.',
         html: emailHtml
@@ -52,11 +52,11 @@ app.get('/send-email/forgot-password/success', (request: FastifyRequest, replay:
         render(ForgotPasswordSuccessEmailTemplate({ 
             name: 'Melqui', 
             previewText: 'Senha alterada com sucesso!', 
-            url: 'https://simplebot.vercel.app/login' 
+            url: 'https://Vunex.vercel.app/login' 
         }))
 
     resend.emails.send({
-        from: 'simplebot@resend.dev',
+        from: 'Vunex@resend.dev',
         to: 'melqui.sodre15@gmail.com',
         subject: 'Senha alterada',
         html: emailHtml
@@ -70,12 +70,12 @@ app.get('/send-email/alter-company', (request: FastifyRequest, replay: FastifyRe
         render(AlterCompanyEmailTemplate({ 
             name: 'Melqui', 
             previewText: 'Companhia alterada com sucesso!', 
-            url: 'https://simplebot.vercel.app/login', 
+            url: 'https://Vunex.vercel.app/login', 
             companyId: 'id da minha companhia'
         }))
 
     resend.emails.send({
-        from: 'simplebot@resend.dev',
+        from: 'Vunex@resend.dev',
         to: 'melqui.sodre15@gmail.com',
         subject: 'Companhia alterada!',
         html: emailHtml

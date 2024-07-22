@@ -68,7 +68,7 @@ export function AlterCompanyEmailTemplate({ name, previewText, url, companyId }:
           <Body className="bg-white my-auto mx-auto font-sans">
 
             <Container className="mx-auto">
-              <Img src="https://simplebot.vercel.app/logo.png" alt="logo do simplebot" width="219" height="43" className="w-[219px] h-[43px] mx-auto" />
+              <Img src="https://www.vunex.com.br/logo.png" alt="logo da vunex" width="219" height="43" className="w-[219px] h-[43px] mx-auto" />
 
               <Heading className="text-center text-2xl text-gray-text">Olá <span className="text-primary-purple">{name}!</span></Heading>
             
@@ -78,7 +78,7 @@ export function AlterCompanyEmailTemplate({ name, previewText, url, companyId }:
             </Container>
 
             <Container className="bg-purple-light py-6 mx-auto rounded">
-              <Img src="https://simplebot.vercel.app/icon.png" alt="icon do simplebot" width="48" height="44" className="w-[48px] h-[44px] mx-auto" />
+              <Img src="https://www.vunex.com.br/brand-logo-roxa.png" alt="icon do Vunex" width="48" height="44" className="w-[48px] h-[44px] mx-auto" />
 
                 <Heading className="text-center text-base text-gray-text">A companhia <span className="text-primary-purple">{companyId}!</span> 
                     {' '}foi adicionada a sua conta. Acesse agora mesmo clicando no botão abaixo. 
@@ -98,7 +98,7 @@ export function AlterCompanyEmailTemplate({ name, previewText, url, companyId }:
 
             <Container className="mt-4">
               <Text className="text-base text-center text-gray-text">
-                Seja bem-vindo a SimpleBot, conte conosco para agilizar o atendimento de sua empresa.
+                Seja bem-vindo a Vunex, conte conosco para agilizar o atendimento de sua empresa.
               </Text>
 
               <Text className="text-base text-center text-gray-text mt-2">
@@ -109,7 +109,7 @@ export function AlterCompanyEmailTemplate({ name, previewText, url, companyId }:
                 <Column>
                   <Link href="#" target="_blank">
                     <Img 
-                      src="https://simplebot.vercel.app/discord.png" 
+                      src="https://www.vunex.com.br/discord.png" 
                       alt="icon do discord" 
                       width="24" 
                       height="24" 
@@ -118,9 +118,9 @@ export function AlterCompanyEmailTemplate({ name, previewText, url, companyId }:
                   </Link>
                 </Column>   
                 <Column>
-                  <Link href="https://www.instagram.com/simplebot.br" target="_blank">
+                  <Link href="https://www.instagram.com/Vunex.br" target="_blank">
                     <Img 
-                      src="https://simplebot.vercel.app/instagram.png" 
+                      src="https://www.vunex.com.br/instagram.png" 
                       alt="icon do discord" 
                       width="24" 
                       height="24" 
@@ -131,7 +131,7 @@ export function AlterCompanyEmailTemplate({ name, previewText, url, companyId }:
                 <Column>
                   <Link href="#" target="_blank">
                     <Img 
-                      src="https://simplebot.vercel.app/facebook.png" 
+                      src="https://www.vunex.com.br/facebook.png" 
                       alt="icon do discord" 
                       width="24" 
                       height="24" 
