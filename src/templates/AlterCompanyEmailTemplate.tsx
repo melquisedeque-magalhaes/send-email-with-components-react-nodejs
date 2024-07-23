@@ -68,7 +68,7 @@ export function AlterCompanyEmailTemplate({ name, previewText, url, companyId }:
           <Body className="bg-white my-auto mx-auto font-sans">
 
             <Container className="mx-auto">
-              <Img src="https://www.vunex.com.br/logo-roxa.png" alt="logo da vunex" width="219" height="43" className="w-[219px] h-[43px] mx-auto" />
+              <Img src="https://www.vunex.com.br/logo-roxa.png" alt="logo da vunex" width="219" height="43" className="w-[420px] h-[224px] mx-auto" />
 
               <Heading className="text-center text-2xl text-gray-text">Olá <span className="text-primary-purple">{name}!</span></Heading>
             
