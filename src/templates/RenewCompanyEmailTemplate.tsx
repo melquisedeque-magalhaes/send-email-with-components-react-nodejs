@@ -1,12 +1,12 @@
 import { Body, Container, Font, Head, Heading, Html, Img, Link, Preview, Tailwind, Text } from "@react-email/components";
 
-interface ForgotPasswordSuccessEmailTemplateProps {
+interface LoginEmailTemplateProps {
     name: string
     previewText: string
     url: string
 }
 
-export function ForgotPasswordSuccessEmailTemplate({ name, previewText, url }: ForgotPasswordSuccessEmailTemplateProps) {
+export function RenewCompanyEmailTemplate({ name, previewText, url }: LoginEmailTemplateProps) {
   return (
       <Html>
         <Head>
@@ -69,24 +69,34 @@ export function ForgotPasswordSuccessEmailTemplate({ name, previewText, url }: F
             <Container className="py-10">
               <Img src="https://www.vunex.com.br/logo-white.png" alt="logo da Vunex" width="197" height="43" className="w-[197px] h-[44px] mx-auto" />
 
-              <Heading className="text-center text-2xl text-white">Olá,{' '} <span className="text-white">{name}!</span></Heading>
+              <Heading className="text-center text-2xl text-white">Olá,  {' '}
+                <span className="text-white">{name}!</span>
+              </Heading>
             
               <Text className="mt-4 text-base text-white text-center">
-                Sua senha foi alterada com sucesso!
+                Sua assinatura está ativa e sua companhia já foi criada,
+                acesse através dos dados abaixo:
               </Text>
             </Container>
 
             <Container className="bg-white py-6 w-full rounded">
-              <Heading className="text-gray-text text-base font-medium text-center">Faça login clicando abaixo</Heading>
+              <Heading className="text-gray-text text-base font-medium text-center">Renovação de Companhia:</Heading>
+
+            
+              <Heading 
+                className="text-gray-text font-bold text-base text-center"
+              >
+                Clique no botão abaixo e selecione a companhia que você deseja renovar.
+              </Heading>
 
               <Container className="text-center mx-auto mt-4">
                 <Link 
                   href={url}
                   className="bg-primary-purple text-white font-bold rounded px-6 w-[187px] h-[32px] py-2 text-center cursor-pointer"
                 >
-                  ACESSAR
+                  RENOVAR
                 </Link>
-              </Container>             
+              </Container>
               
             </Container>
 

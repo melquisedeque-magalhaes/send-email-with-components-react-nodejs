@@ -1,4 +1,4 @@
-import { Body, Column, Container, Font, Head, Heading, Html, Img, Link, Preview, Row, Tailwind, Text } from "@react-email/components";
+import { Body, Container, Font, Head, Heading, Html, Img, Link, Preview, Tailwind, Text } from "@react-email/components";
 
 interface CreateNewPasswordEmailTemplateProps {
     name: string
@@ -64,27 +64,27 @@ export function CreateNewPasswordEmailTemplate({ name, previewText, url }: Creat
             },
           }}
         >
-          <Body className="bg-white my-auto mx-auto font-sans">
+          <Body className="bg-card-purple font-sans rounded">
 
-            <Container className="mx-auto">
-              <Img src="https://www.vunex.com.br/logo-roxa.png" alt="logo da Vunex" width="219" height="43" className="w-[420px] h-[224px] mx-auto" />
+           <Container className="py-10">
+              <Img src="https://www.vunex.com.br/logo-white.png" alt="logo da Vunex" width="197" height="43" className="w-[197px] h-[44px] mx-auto" />
 
-              <Heading className="text-center text-2xl text-gray-text">Olá <span className="text-primary-purple">{name}!</span></Heading>
+              <Heading className="text-center text-2xl text-white">
+                  Olá <span className="text-white">{name}!</span>
+              </Heading>
             
-              <Text className="mt-4 text-base text-gray-text text-center">
+              <Text className="mt-4 text-base text-white text-center">
               Recebemos o seu pedido se alteração de senha. Caso você não tenha feito o pedido, entre imediatamente em contato com nosso suporte.
               </Text>
             </Container>
 
-            <Container className="bg-purple-light py-6 mx-auto rounded">
-              <Img src="https://www.vunex.com.br/brand-logo-roxa.png" alt="icon do Vunex" width="48" height="44" className="w-[48px] h-[44px] mx-auto" />
-
+            <Container className="bg-white py-6 rounded">
               <Heading className="text-gray-text text-base font-medium text-center">Clique no botão abaixo</Heading>
 
               <Container className="text-center mx-auto mt-4">
                 <Link 
                   href={url}
-                  className="bg-primary-purple text-white font-bold rounded px-6 w-[187px] h-[32px] py-2 text-center cursor-pointer"
+                  className="bg-primary-purple text-white font-bold rounded px-6 w-[163px] h-[32px] py-2 text-center cursor-pointer"
                 >
                   CRIAR NOVA SENHA
                 </Link>
@@ -94,61 +94,14 @@ export function CreateNewPasswordEmailTemplate({ name, previewText, url }: Creat
                 Caso não consiga visualizar o botão acima, clique no link abaixo:
               </Text>
 
-            <Container className="text-center mx-auto">
-                <Link href={url}>
-                    {url}
-                </Link>
-            </Container>
-              
-              
+              <Container className="text-center mx-auto">
+                  <Link href={url}>
+                      {url}
+                  </Link>
+              </Container>
             </Container>
 
-            <Container className="mt-4">
-              <Text className="text-base text-center text-gray-text">
-                Seja bem-vindo a Vunex, conte conosco para agilizar o atendimento de sua empresa.
-              </Text>
-
-              <Text className="text-base text-center text-gray-text mt-2">
-                Nossos canais de contato:
-              </Text>
-
-              <Row className="w-[174px]">
-                <Column>
-                  <Link href="#" target="_blank">
-                    <Img 
-                      src="https://www.vunex.com.br/discord.png" 
-                      alt="icon do discord" 
-                      width="24" 
-                      height="24" 
-                      className="w-[24px] h-[24px] mx-auto" 
-                    />
-                  </Link>
-                </Column>   
-                <Column>
-                  <Link href="https://www.instagram.com/Vunex.br" target="_blank">
-                    <Img 
-                      src="https://www.vunex.com.br/instagram.png" 
-                      alt="icon do discord" 
-                      width="24" 
-                      height="24" 
-                      className="w-[24px] h-[24px] mx-auto" 
-                    />
-                  </Link>
-                </Column> 
-                <Column>
-                  <Link href="#" target="_blank">
-                    <Img 
-                      src="https://www.vunex.com.br/facebook.png" 
-                      alt="icon do discord" 
-                      width="24" 
-                      height="24" 
-                      className="w-[24px] h-[24px] mx-auto" 
-                    />
-                  </Link>
-                </Column>   
-              </Row>
-      
-            </Container>
+            <Container className="py-10" />
           </Body>
         </Tailwind>
       </Html>

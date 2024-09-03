@@ -2,18 +2,18 @@ import "dotenv/config"
 import { render } from "@react-email/components";
 import fastify, { FastifyReply, FastifyRequest } from "fastify";
 import { Resend } from 'resend';
-import { LoginEmailTemplate } from './templates/LoginEmailTemplate'
+import { RenewCompanyEmailTemplate } from './templates/RenewCompanyEmailTemplate'
 import { CreateNewPasswordEmailTemplate } from "./templates/CreateNewPasswordEmailTemplate";
 import { ForgotPasswordSuccessEmailTemplate } from "./templates/ForgotPasswordSuccessEmailTemplate";
-import { AlterCompanyEmailTemplate } from "./templates/AlterCompanyEmailTemplate";
+import { AddMemberSquadEmailTemplate } from "./templates/AddMemberSquadEmailTemplate";
 
 const app = fastify()
 
 const resend = new Resend(process.env.RESEND_KEY);
 
-app.get('/send-email/login', (request: FastifyRequest, replay: FastifyReply) => {
+app.get('/send-email/renew-company', (request: FastifyRequest, replay: FastifyReply) => {
     const emailHtml = 
-        render(LoginEmailTemplate({ 
+        render(RenewCompanyEmailTemplate({ 
             name: 'Melqui', 
             previewText: 'Aqui esta login, para acessar a plataforma', 
             url: 'https://Vunex.vercel.app/login' 
@@ -65,13 +65,15 @@ app.get('/send-email/forgot-password/success', (request: FastifyRequest, replay:
     replay.send({ email: 'success' })
 })
 
-app.get('/send-email/alter-company', (request: FastifyRequest, replay: FastifyReply) => {
+app.get('/send-email/add-member-squad', (request: FastifyRequest, replay: FastifyReply) => {
     const emailHtml = 
-        render(AlterCompanyEmailTemplate({ 
+        render(AddMemberSquadEmailTemplate({ 
             name: 'Melqui', 
             previewText: 'Companhia alterada com sucesso!', 
             url: 'https://Vunex.vercel.app/login', 
-            companyId: 'id da minha companhia'
+            email: 'melqui.sodre15@gmail.com',
+            password: '10203010',
+            adminName: 'Lucas'
         }))
 
     resend.emails.send({

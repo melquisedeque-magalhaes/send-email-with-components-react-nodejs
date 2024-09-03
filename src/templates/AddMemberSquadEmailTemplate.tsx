@@ -1,12 +1,15 @@
-import { Body, Column, Container, Font, Head, Heading, Html, Img, Link, Preview, Row, Tailwind, Text } from "@react-email/components";
+import { Body, Container, Font, Head, Heading, Html, Img, Link, Preview, Tailwind, Text } from "@react-email/components";
 
 interface LoginEmailTemplateProps {
     name: string
     previewText: string
     url: string
+    email: string
+    password: string
+    adminName: string
 }
 
-export function LoginEmailTemplate({ name, previewText, url }: LoginEmailTemplateProps) {
+export function AddMemberSquadEmailTemplate({ name, previewText, url, email, password, adminName }: LoginEmailTemplateProps) {
   return (
       <Html>
         <Head>
@@ -64,22 +67,20 @@ export function LoginEmailTemplate({ name, previewText, url }: LoginEmailTemplat
             },
           }}
         >
-          <Body className="bg-white my-auto mx-auto font-sans">
+          <Body className="bg-card-purple font-sans rounded">
 
-            <Container className="mx-auto">
-              <Img src="https://www.vunex.com.br/logo-roxa.png" alt="logo da Vunex" width="219" height="43" className="w-[420px] h-[224px] mx-auto" />
+            <Container className="py-10">
+              <Img src="https://www.vunex.com.br/logo-white.png" alt="logo da Vunex" width="197" height="43" className="w-[197px] h-[44px] mx-auto" />
 
-              <Heading className="text-center text-2xl text-gray-text">Olá <span className="text-primary-purple">{name}!</span></Heading>
+              <Heading className="text-center text-2xl text-white">Olá, <span className="text-white">{name}!</span></Heading>
             
-              <Text className="mt-4 text-base text-gray-text text-center">
-                Sua assinatura está ativa e sua companhia já foi criada,
-                acesse através dos dados abaixo:
+              <Text className="mt-4 text-base text-white text-center">
+                Você foi adicionado como membro da Equipe
+                por {adminName}
               </Text>
             </Container>
 
-            <Container className="bg-purple-light py-6 mx-auto rounded">
-              <Img src="https://www.vunex.com.br/brand-logo-roxa.png" alt="icon do Vunex" width="48" height="44" className="w-[48px] h-[44px] mx-auto" />
-
+            <Container className="bg-white py-6 w-full rounded">
               <Heading className="text-gray-text text-base font-medium text-center">Suas credenciais:</Heading>
 
             
@@ -88,7 +89,7 @@ export function LoginEmailTemplate({ name, previewText, url }: LoginEmailTemplat
               >
                 Login:{' '}
                 <span className="font-normal text-gray-text">
-                  email@gmail.com
+                  {email}
                 </span>
               </Heading>
 
@@ -97,7 +98,7 @@ export function LoginEmailTemplate({ name, previewText, url }: LoginEmailTemplat
               >
                 Senha:{' '}
                 <span className="font-normal text-gray-text">
-                  10203010
+                  {password}
                 </span>
               </Heading>
 
@@ -106,58 +107,13 @@ export function LoginEmailTemplate({ name, previewText, url }: LoginEmailTemplat
                   href={url}
                   className="bg-primary-purple text-white font-bold rounded px-6 w-[187px] h-[32px] py-2 text-center cursor-pointer"
                 >
-                  Acessar
+                  ACESSAR
                 </Link>
-              </Container>
+              </Container>  
               
             </Container>
 
-            <Container className="mt-4">
-              <Text className="text-base text-center text-gray-text">
-                Seja bem-vindo a Vunex, conte conosco para agilizar o atendimento de sua empresa.
-              </Text>
-
-              <Text className="text-base text-center text-gray-text mt-2">
-                Nossos canais de contato:
-              </Text>
-
-              <Row className="w-[174px]">
-                <Column>
-                  <Link href="#" target="_blank">
-                    <Img 
-                      src="https://www.vunex.com.br/discord.png" 
-                      alt="icon do discord" 
-                      width="24" 
-                      height="24" 
-                      className="w-[24px] h-[24px] mx-auto" 
-                    />
-                  </Link>
-                </Column>   
-                <Column>
-                  <Link href="https://www.instagram.com/Vunex.br" target="_blank">
-                    <Img 
-                      src="https://www.vunex.com.br/instagram.png" 
-                      alt="icon do discord" 
-                      width="24" 
-                      height="24" 
-                      className="w-[24px] h-[24px] mx-auto" 
-                    />
-                  </Link>
-                </Column> 
-                <Column>
-                  <Link href="#" target="_blank">
-                    <Img 
-                      src="https://www.vunex.com.br/facebook.png" 
-                      alt="icon do discord" 
-                      width="24" 
-                      height="24" 
-                      className="w-[24px] h-[24px] mx-auto" 
-                    />
-                  </Link>
-                </Column>   
-              </Row>
-      
-            </Container>
+            <Container className="py-10" />
           </Body>
         </Tailwind>
       </Html>
