@@ -6,6 +6,7 @@ import { RenewCompanyEmailTemplate } from './templates/RenewCompanyEmailTemplate
 import { CreateNewPasswordEmailTemplate } from "./templates/CreateNewPasswordEmailTemplate";
 import { ForgotPasswordSuccessEmailTemplate } from "./templates/ForgotPasswordSuccessEmailTemplate";
 import { AddMemberSquadEmailTemplate } from "./templates/AddMemberSquadEmailTemplate";
+import { sendNotificationBotEmailTemplate } from "./templates/sendNotificationBotEmailTemplate";
 
 const app = fastify()
 
@@ -80,6 +81,25 @@ app.get('/send-email/add-member-squad', (request: FastifyRequest, replay: Fastif
         from: 'Vunex@resend.dev',
         to: 'melqui.sodre15@gmail.com',
         subject: 'Companhia alterada!',
+        html: emailHtml
+    })
+
+    replay.send({ email: 'success' })
+})
+
+app.get('/send-email/send-notification-bot', (request: FastifyRequest, replay: FastifyReply) => {
+    const emailHtml = 
+        render(sendNotificationBotEmailTemplate({ 
+            previewText: 'Companhia Desconectada!', 
+            nomeCompany: 'Bot 1',
+            phone: '61991193044',
+            url: 'https://vunex.com.br/'
+        }))
+
+    resend.emails.send({
+        from: 'Vunex@resend.dev',
+        to: 'melqui.sodre15@gmail.com',
+        subject: 'Companhia Desconectada!',
         html: emailHtml
     })
 
