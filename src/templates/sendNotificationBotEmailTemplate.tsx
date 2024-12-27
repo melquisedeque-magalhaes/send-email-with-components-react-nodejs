@@ -5,9 +5,10 @@ interface LoginEmailTemplateProps {
     nomeCompany: string
     previewText: string
     url: string
+    name: string
 }
 
-export function sendNotificationBotEmailTemplate({ phone, nomeCompany, previewText, url }: LoginEmailTemplateProps) {
+export function sendNotificationBotEmailTemplate({ phone, nomeCompany, previewText, url, name }: LoginEmailTemplateProps) {
   return (
       <Html>
         <Head>
@@ -68,6 +69,10 @@ export function sendNotificationBotEmailTemplate({ phone, nomeCompany, previewTe
           <Body className="bg-card-purple font-sans rounded">
             <Container className="py-10">
               <Img src="https://www.vunex.com.br/logo-white.png" alt="logo da Vunex" width="197" height="43" className="w-[197px] h-[44px] mx-auto" />
+
+              <Heading className="text-center text-2xl text-white">Olá,  {' '}
+                <span className="text-white">{name}!</span>
+              </Heading>
             </Container>
 
             <Container className="bg-white py-6 w-full rounded">

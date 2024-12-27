@@ -93,7 +93,8 @@ app.get('/send-email/send-notification-bot', (request: FastifyRequest, replay: F
             previewText: 'Companhia Desconectada!', 
             nomeCompany: 'Bot 1',
             phone: '61991193044',
-            url: 'https://vunex.com.br/'
+            url: 'https://vunex.com.br/',
+            name: 'Melqui'
         }))
 
     resend.emails.send({
